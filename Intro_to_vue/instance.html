@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Instance</title>
+
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.css">
+</head>
+<body>
+
+        <!--First Vuew App-->
+        <div id="app">
+            <!--Simple Way-->
+            <button type="button" class="btn btn-primary btn-lg btn-block">
+                {{message}}
+            </button>
+            <!--Using v-text -->
+            <button type="button" class="btn btn-danger btn-lg btn-block" v-text='message'>
+
+            </button>
+            <!--Operation-->
+            <button type="button" class="btn btn-primary btn-lg btn-block">
+               {{value}} * {{value}} = {{value * value}}
+            </button>
+
+            <!--Complex Function-->
+            <button type="button" class="btn btn-primary btn-lg btn-block">
+                {{Math.random()}} can't be equal {{value}}
+            </button>
+
+            <button type="button" class="btn btn-warning btn-lg btn-block">
+               Reverse Message: {{message.split('').reverse().join('')}}
+            </button>
+
+            <!-- V-Bind -->
+            <div class="text-center">
+                <a v-bind:href="link">
+                    <img v-bind:src="imgSrc" alt="" class="img-fluid mt-4" style="height: 200px !important;">
+                </a>
+            </div>
+           
+        </div>
+
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
