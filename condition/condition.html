@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Condition</title>
+
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.css">
+</head>
+<body>
+
+      <div id="app">
+
+        <button v-show="auth" type="button" class=" btn btn-danger mt-2 btn-lg btn-block">
+            {{info}}
+        </button>
+
+        <button v-if="imposter >=3" type="button" class=" btn btn-danger mt-2 btn-lg btn-block">
+            There are imposter among us
+        </button>
+     
+        <button v-else-if="imposter >1 && imposter <3" type="button" class=" btn btn-success mt-2 btn-lg btn-block">
+            Of course :p 
+        </button>
+
+        <button v-else type="button" class=" btn btn-warning mt-2 btn-lg btn-block">
+           Game Over
+        </button>
+
+
+     
+      </div>
+
+    
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> Production Version -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
+    <script src="main.js"></script>
+</body>
+</html>
