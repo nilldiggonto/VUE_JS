@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Style</title>
+
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.css">
+
+    <style>
+        .dot {
+            height: 25px;
+            width: 25px;
+            /* background-color: #bbb; */
+            border-radius: 50%;
+            display: inline-block;
+            }
+
+            .box{
+                height: 25px;
+                width: 25px;
+                display: inline-block;
+            }
+    </style>
+</head>
+<body>
+
+        <!--First Vuew App-->
+        <div id="app">
+          
+<div class="container">
+    <button type="button" class="btn btn-primary btn-lg btn-block">
+        {{title}}
+</button>
+<div class="container mt-2">
+    <input v-model='title' placeholder="rewrite title" type="text" class="form-control" name="" id="">
+
+    <hr>
+    <div class="custom-control custom-checkbox">
+        <input v-model='active' type="checkbox" class="custom-control-input" id="customCheck1" checked="">
+        <label class="custom-control-label" for="customCheck1">Checked: {{active}}</label>
+      </div>
+    <hr>
+
+    <div class="form-group">
+        
+        <select class="form-control" id="exampleSelect1" v-model='city'>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <label for="exampleSelect1">Digit:{{city}}</label>
+      </div>
+</div>
+
+<!--Using v-text -->
+
+
+
+<!--Circle-->
+<div class="text-center mt-2">
+     <span class="bg-danger dot"></span>
+ </div>
+
+ <div class="row justify-content-center mt2">
+     <input type="text" name=""  v-model='color'>
+ </div>
+ <hr>
+ <div class="text-center mt-2">
+    <p>Color Available:</p>
+    <span v-bind:Style="{backgroundColor:color}" class=" dot"></span>
+</div>
+
+<hr>
+<div class="container">
+    <button type="button" class="btn btn-primary btn-lg btn-block">
+        {{comment}}
+    </button>
+    <form  class="form" @submit.prevent='onSubmit'>
+        <div class="form-group" >
+            
+            <textarea v-model="comment" class="form-control" id="exampleTextarea" rows="3"></textarea>
+            <div v-if="errors" style="display: block !important;" class=" invalid-feedback">{{errors}}</div>
+        </div>
+        <input type="submit" class="btn btn-sm btn-danger" value="comment">
+    </form>
+
+    <div class="card text-center mt-2 mb-4">
+        <div class="card-body" v-for='comment in comments' >
+            <blockquote class="blockquote">
+              
+                <footer class="blockquote-footer">{{comment}} <cite title="Source Title">Nill</cite></footer>
+              </blockquote>
+              
+        </div>
+    </div>
+</div>
+
+</div>
+           
+        </div>
+
+
+    
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
+    <script src="main.js"></script>
+</body>
+</html>
