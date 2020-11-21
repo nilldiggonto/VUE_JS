@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Iteration</title>
+
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.css">
+
+ 
+</head>
+<body>
+
+        <!--First Vuew App-->
+    <div id="app">
+        <button type="button" class="btn btn-primary btn-lg btn-block">
+            {{title}}
+        </button>
+
+        <div class="list-group mt-2 text-center">
+
+            <a v-for="number in 3" href="#" class="list-group-item list-group-item-action active">
+                {{number}}
+            </a>
+          </div>
+
+          <table class="table table-hover table-success text-center">
+            <thead>
+              <tr>
+                <th scope="col">Game</th>
+                <th scope="col">availability</th>
+                <th scope="col">MultiPlayer</th>
+                
+              
+              </tr>
+            </thead>
+
+            <tbody v-for="game in games" :key="game.id">
+                <tr>
+                    <td>{{game.name}}</td>
+                    <td>{{game.availability}}</td>
+                    <td>{{game.multyplayer}}</td>
+                </tr>
+            </tbody>
+            </table>
+
+    </div>
+           
+        
+
+
+    
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
+    <script src="main.js"></script>
+</body>
+</html>
