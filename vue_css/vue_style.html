@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Style</title>
+
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.css">
+
+    <style>
+        .dot {
+            height: 25px;
+            width: 25px;
+            /* background-color: #bbb; */
+            border-radius: 50%;
+            display: inline-block;
+            }
+
+            .box{
+                height: 25px;
+                width: 25px;
+                display: inline-block;
+            }
+    </style>
+</head>
+<body>
+
+        <!--First Vuew App-->
+        <div id="app">
+          
+            <button type="button" class="btn btn-primary btn-lg btn-block">
+                {{title}}
+            </button>
+            <!--Using v-text -->
+            
+            <button @click="changeShape" type="button" class=" btn-primary btn-lg btn-block">
+                Change Shape
+            </button>
+            
+            <!--Circle-->
+            <div class="text-center mt-2">
+                <span v-bind:style="styleObject" v-bind:class="{dot:circle, box:!circle}">
+
+                </span>
+                <span v-bind:class="{dot:circle, box:!circle} " class="bg-danger"></span>
+                <span v-bind:class="{dot:circle, box:!circle} " class="bg-info"></span>
+                <span v-bind:class="{dot:circle, box:!circle} " class="bg-success"></span>
+                <span v-bind:class="{dot:circle, box:!circle} "class="bg-warning"></span>
+                <!-- <span class="bg-info dot"></span>
+                <span class="bg-warning dot"></span> -->
+            </div>
+
+            <!--Box-->
+
+            <!-- <div class="text-center mt-2">
+                <span v-bind:style="styleObject" class="box">
+
+                </span> -->
+                <!-- <span class="bg-primary box"></span>
+                <span class="bg-info box"></span>
+                <span class="bg-warning box"></span> -->
+            <!-- </div> -->
+           
+        </div>
+
+
+    
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
+    <script src="main.js"></script>
+</body>
+</html>
